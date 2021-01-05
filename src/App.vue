@@ -1,14 +1,18 @@
 <template>
   <div id="app">
     <div>
-    <h1>News!!!!</h1>
+      <h1>News!!!!</h1>
+      <h1>Newss show here</h1>
+      <!-- <div v-bind:key="article.id" v-for="article in news">
+        <Displaynews :article="article" />
+      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-
+// import Displaynews from "./components/Displaynews";
 export default {
   name: "App",
   data() {
@@ -16,24 +20,32 @@ export default {
       news: [],
     };
   },
-  components: {},
+  components: {
+    // Displaynews,
+  },
   created() {
     axios
       .get(
-        "http://newsapi.org/v2/top-headlines?country=ng&category=entertainment&apiKey=2e8cb925a0bc45a794469a2bb233b93e"
+        "https://cryptocontrol.io/api/public/", {
+          headers:{
+            "Authorization": "Bearer 94981ef81899cb1975ec0daaeed63250"
+          }
+        }
       )
       .then((res) => {
         this.news = res.data;
+      })
+      .catch((error) => {
+        console.log(error.response);
       });
   },
 };
 </script>
 
 <style>
-#app {
+body {
   margin: 0;
-  height: 1000px;
   background-color: #020202;
-  color: #FAFAFA;
+  color: #fafafa;
 }
 </style>
