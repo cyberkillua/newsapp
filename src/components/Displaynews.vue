@@ -4,7 +4,7 @@
     <img v-bind:src="article.urlToImage" />
       </div>
     <div class="textcard">
-    <h3>{{ article.title }}</h3>
+    <h2>{{ article.title }}</h2>
     <p>{{ article.description}}</p>
     <p>
       <a
@@ -29,9 +29,14 @@ export default {
 <style  scoped>
 .onecard {
   display: flex;
+   margin-bottom: 50px;
+  font-family: 'Fira Sans', sans-serif;
 }
 a {
   color: #ff9933;
+  text-decoration: none;
+  font-style: italic;
+  padding-top: 10px;
 }
 img {
   height: 250px;
@@ -39,32 +44,35 @@ img {
   margin: 10px;
 }
 .textcard {
-    padding: 10px 10px 0 10px;
+    padding: 0 10px 0 10px;
     height: 250px;
-    width: 50%;
-    margin: 10px;
+    width: 40%;
+    margin: 0 10px 10px 50px;
 }
 @media screen and (max-width: 768px) {
   .onecard {
     display: block;
-    /* background-color: tomato; */
+    margin-bottom: 50px;
   }
   .textcard {
     padding: 0;
     height: fit-content;
     width: 80%;
     margin: auto;
+    /* background-color: green; */
     
 }
 .imgcard {
     width: 80%;
     margin: auto;
+    /* background-color: tomato; */
 }
   img {
     height: 150px;
-    width: 200px;
+    width: 100%;
     padding: 0;
-    margin: 10px;
+    margin: 10px 0 10px 0;
+
   }
 }
 </style>

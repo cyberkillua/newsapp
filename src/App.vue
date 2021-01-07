@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div>
-      <h1>News!!!!</h1>
-      <h1>Newss show here</h1>
-      <div v-bind:key="article.id" v-for="article in news">
+      <div class="navcard">
+        <p>Daily Crypto News</p>
+      </div>
+      <div class="articlecard" v-bind:key="article.id" v-for="article in news">
         <Displaynews :article="article" />
       </div>
     </div>
@@ -26,7 +27,7 @@ export default {
   created() {
     axios
       .get(
-        "http://newsapi.org/v2/everything?q=bitcoin&from=2020-12-06&sortBy=publishedAt&apiKey=2e8cb925a0bc45a794469a2bb233b93e"
+        "http://newsapi.org/v2/everything?language=en&q=bitcoin&from=2020-12-06&sortBy=publishedAt&apiKey=2e8cb925a0bc45a794469a2bb233b93e"
       )
       .then((res) => {
         this.news = res.data.articles;
@@ -44,13 +45,32 @@ body {
   background-color: #020202;
   color: #fafafa;
 }
-#app {
+.articlecard {
   margin: auto;
   width: 60%;
 }
+.navcard {
+  background-color: #262626;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 70px;
+  color: #ff9933;
+  font-family: 'Montserrat', sans-serif;
+  font-size: xx-large;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 @media screen and (max-width: 768px) {
-  #app {
-    width: 90%;
+  .articlecard {
+    width: 100%;
+    margin: auto;
+  }
+}
+@media (max-width: 1024px) {
+  .articlecard {
+    width: 100%;
     margin: auto;
   }
 }
