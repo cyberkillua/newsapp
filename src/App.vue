@@ -27,8 +27,9 @@ export default {
   created() {
     axios
       .get(
-        "https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/everything?language=en&q=bitcoin&from=2020-12-06&sortBy=publishedAt&apiKey=2e8cb925a0bc45a794469a2bb233b93e"
+        "https://gnews.io/api/v4/top-headlines?q=bitcoin&lang=en&token=b25fded44a2a2dbf90c00b381b74a513"
       )
+    
       .then((res) => {
         this.news = res.data.articles;
       })

@@ -1,7 +1,7 @@
 <template>
   <div class="onecard">
       <div class="imgcard">
-    <img v-bind:src="article.urlToImage" />
+    <img v-bind:src="article.image" />
       </div>
     <div class="textcard">
     <h2>{{ article.title }}</h2>
