@@ -27,7 +27,7 @@ export default {
   created() {
     axios
       .get(
-        "http://newsapi.org/v2/everything?language=en&q=bitcoin&from=2020-12-06&sortBy=publishedAt&apiKey=2e8cb925a0bc45a794469a2bb233b93e"
+        "https://newsapi.org/v2/everything?language=en&q=bitcoin&from=2020-12-06&sortBy=publishedAt&apiKey=2e8cb925a0bc45a794469a2bb233b93e"
       )
       .then((res) => {
         this.news = res.data.articles;
