@@ -7,6 +7,7 @@
       <div class="articlecard" v-bind:key="article.id" v-for="article in news">
         <Displaynews :article="article" />
       </div>
+      <div class="footcard"></div>
     </div>
   </div>
 </template>
@@ -62,7 +63,11 @@ body {
   align-items: center;
   display: flex;
 }
-
+.footcard {
+  background-color: #262626;
+  width: 100%;
+  height: 100px;
+}
 @media screen and (max-width: 768px) {
   .articlecard {
     width: 100%;
