@@ -28,9 +28,11 @@ export default {
   created() {
     axios
       .get(
-        "https://gnews.io/api/v4/top-headlines?q=bitcoin&lang=en&token=b25fded44a2a2dbf90c00b381b74a513"
+        encodeURI(
+          "https://cors-anywhere.herokuapp.com/https://gnews.io/api/v4/search?q=litecoin OR bitcoin OR ethereum OR cryptocurrency&lang=en&token=b25fded44a2a2dbf90c00b381b74a513"
+        )
       )
-    
+
       .then((res) => {
         this.news = res.data.articles;
       })
@@ -57,7 +59,7 @@ body {
   height: 100px;
   margin-bottom: 70px;
   color: #ff9933;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: xx-large;
   justify-content: center;
   align-items: center;
