@@ -29,7 +29,7 @@ export default {
     axios
       .get(
         encodeURI(
-          "https://cors-anywhere.herokuapp.com/https://gnews.io/api/v4/search?q=litecoin OR bitcoin OR ethereum OR cryptocurrency&lang=en&token=b25fded44a2a2dbf90c00b381b74a513"
+          "https://gnews.io/api/v4/search?q=litecoin OR bitcoin OR ethereum OR cryptocurrency&lang=en&token=b25fded44a2a2dbf90c00b381b74a513"
         )
       )
 
